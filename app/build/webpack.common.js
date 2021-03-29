@@ -1,7 +1,6 @@
-const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { resolvePath } = require('./utils')
 const { VueLoaderPlugin } = require('vue-loader')
-const resolvePath = (...args) => path.resolve(process.cwd(), ...args)
 
 module.exports = {
   entry: './app/index.js',
