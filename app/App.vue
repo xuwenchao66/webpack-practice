@@ -1,5 +1,8 @@
 <template>
-  <h1>{{ content }}</h1>
+  <div>
+    <h1>{{ content }}</h1>
+    <img :src="require('./assets/logo.png')" alt="logo" />
+  </div>
 </template>
 
 <script>
