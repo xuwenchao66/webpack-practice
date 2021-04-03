@@ -16,7 +16,19 @@ module.exports = {
       },
       {
         test: /\.(css|less)$/i,
-        use: ['style-loader', 'css-loader', 'less-loader']
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [['postcss-preset-env']]
+              }
+            }
+          },
+          'less-loader'
+        ]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
