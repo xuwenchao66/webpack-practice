@@ -6,12 +6,19 @@
 </template>
 
 <script>
+const log = () => console.log('App')
 export default {
   name: 'App',
   data() {
     return {
       content: 'Hello webpack & vue.'
     }
+  },
+  mounted() {
+    this.log()
+  },
+  methods: {
+    log
   }
 }
 </script>

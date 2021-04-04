@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { resolvePath } = require('./utils')
 const { VueLoaderPlugin } = require('vue-loader')
+const appSourcePath = resolvePath('app')
 
 module.exports = {
   entry: './app/index.js',
@@ -10,6 +11,13 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        include: [appSourcePath],
+        use: {
+          loader: 'babel-loader'
+        }
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader'
